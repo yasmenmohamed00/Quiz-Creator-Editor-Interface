@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Button, FormGroup, FormCheck } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import { useQuizContext } from '../QuizContext';
 import { questionsData } from '../ui/Questiondummydata';
 import { useNavigate } from 'react-router-dom';
@@ -67,6 +67,9 @@ const AddQuiz = () => {
 
   return (
     <div className="container">
+      <div className='header d-flex justify-content-between pt-4'>
+        <h2>Create New Quiz</h2>
+      </div>
       <Form>
         <Form.Group controlId="formTitle">
           <Form.Label>Title</Form.Label>
