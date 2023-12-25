@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import QuizList from './components/QuizList';
+import QuizForm from'./components/QuizForm';
+import QuizProvider from './QuizContext';
+import AddQuiz from './components/AddQuiz';
+import ErrorPage from "./components/ErrorPage";
+const route = createBrowserRouter([
+    {path:'', element: <QuizList />},
+    {path:'quiz-form/:id', element: <QuizForm />},
+    {path:'quiz-add', element: <AddQuiz />},
+    {
+      path: "*",
+      element: <ErrorPage />,
+    },
+]); 
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <QuizProvider> <RouterProvider router={route} /> </QuizProvider>;
 }
 
 export default App;
