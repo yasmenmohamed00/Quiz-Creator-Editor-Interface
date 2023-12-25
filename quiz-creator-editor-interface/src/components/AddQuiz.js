@@ -59,7 +59,13 @@ const AddQuiz = () => {
 
 
   const handleSave = () => {
-
+    
+    // Perform validation checks before submitting
+    if (!newQuiz.title || !newQuiz.description || newQuiz.questions_answers.length === 0) {
+      alert('Please fill in all required fields and select at least one question.');
+      return;
+    }
+  
     addQuiz(newQuiz); // Add the new quiz to the context with selected questions
     console.log(newQuiz)
     navigate('/');
