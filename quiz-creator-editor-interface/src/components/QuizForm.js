@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Button, FormGroup, FormCheck,Modal } from 'react-bootstrap';
+import { Form, Button} from 'react-bootstrap';
 import { useQuizContext } from '../QuizContext';
 import QuestionList from './QuestionList';
 import { useParams } from 'react-router-dom';
@@ -70,7 +70,10 @@ const QuizForm = () => {
   
 
   return (
-    <div className="container">
+    <div className="container py-5">
+      <div className='header d-flex justify-content-between'>
+        <h2>Edit Your Quiz </h2>
+      </div>
       <Form>
         <Form.Group controlId="formTitle">
           <Form.Label>Title</Form.Label>
