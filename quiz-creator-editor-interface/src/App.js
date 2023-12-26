@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import QuizList from './components/QuizList';
-import QuizForm from'./components/QuizForm';
+import QuizList from './pages/QuizList';
+import QuizForm from'./pages/QuizDetails';
 import QuizProvider from './QuizContext';
-import AddQuiz from './components/AddQuiz';
+import AddQuiz from './pages/AddQuiz';
 import ErrorPage from "./components/ErrorPage";
 const route = createBrowserRouter([
     {path:'', element: <QuizList />},
